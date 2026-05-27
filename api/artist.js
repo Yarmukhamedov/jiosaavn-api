@@ -237,6 +237,9 @@ export default async function handler(
   const token =
     req.query.token;
 
+  const page =
+    req.query.page || "1";
+
   if (!token) {
     return res.status(400).json({
       status: false,
@@ -250,7 +253,7 @@ export default async function handler(
     `?__call=webapi.get` +
     `&token=${encodeURIComponent(token)}` +
     `&type=artist` +
-    `&p=0` +
+    `&p=${page}` +
     `&n_song=50` +
     `&n_album=50` +
     `&sub_type=` +
@@ -267,7 +270,7 @@ export default async function handler(
     `?__call=webapi.get` +
     `&token=${encodeURIComponent(token)}` +
     `&type=artist` +
-    `&p=0` +
+    `&p=${page}` +
     `&n_song=50` +
     `&n_album=50` +
     `&sub_type=` +

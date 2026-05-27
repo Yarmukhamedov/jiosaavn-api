@@ -32,21 +32,32 @@
 <h3>🔍 Search</h3>
 
 <pre>
-/api/songs?q={query}
+<b>Songs search:</b> /api/songs?q={query}
 
-/api/albums?q={query}
+<b>Albums search:</b> /api/albums?q={query}
 
-/api/artists?q={query}
+<b>Artists search:</b> /api/artists?q={query}
 
-/api/playlists?q={query}
+<b>Playlists search:</b> /api/playlists?q={query}
 </pre>
 
 <h3>📀 Details</h3>
 
 <pre>
-/api/playlist?token={playlistToken}
 
-/api/artist?token={artistToken}
+<b>Album details:</b> /api/album?token={albumToken}
+
+<b>Playlist details:</b> /api/playlist?token={playlistToken}
+
+<b>Artist details:</b> /api/artist?token={artistToken}
+</pre>
+
+<h3>Other Endpoints</h3>
+
+<pre>
+
+<b>Related albums:</b> /api/related?id={albumId}
+
 </pre>
 
 <hr>
@@ -168,6 +179,7 @@ Otherwise English/international search results will not appear.
 <ul>
   <li>Playlists may require pagination</li>
   <li>Some artist metadata is incomplete</li>
+  <li>Explicit content is marked at album level so if the album is explicit then all the tracks in the album will labeled as explicit even if some tracks in the album are clean</li>
 </ul>
 
 <hr>

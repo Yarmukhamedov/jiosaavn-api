@@ -1,4 +1,4 @@
-<h1 align="center">JioSaavn API (Vercel)</h1>
+<h1 align="center">JioSaavn API</h1>
 
 <p align="center">
   Reverse-engineered backend for JioSaavn.<br>
@@ -7,10 +7,10 @@
 
 <hr>
 
-<h2>⚠️ Before you get excited</h2>
+<h2>Disclaimer</h2>
 
 <ul>
-  <li>This is <b>NOT affiliated with JioSaavn</b></li>
+  <li>This project is <b>not affiliated with JioSaavn</b></li>
   <li>All content belongs to their respective owners</li>
   <li>This is for <b>educational / personal use</b></li>
 </ul>

@@ -149,9 +149,6 @@ function formatAlbum(album) {
     title:
       decode(album.title),
 
-    subtitle:
-      decode(album.subtitle),
-
     type:
       "album",
 
@@ -164,32 +161,39 @@ function formatAlbum(album) {
     language:
       album.language,
 
-    year:
-      album.year,
-
-    play_count:
-      album.play_count,
-
     isExplicit:
       album.explicit_content === "1",
 
     more_info: {
-      song_count:
-        album.more_info?.song_count || "0",
+      release_date:
+        album.more_info
+          ?.release_date || "",
 
-      artists: {
-        primary:
-          (
-            album.more_info?.artistMap
-              ?.primary_artists || []
-          ).map(formatArtist),
+      artists:
+        (
+          album.more_info?.artistMap
+            ?.artists || []
+        ).map((artist) => ({
+          id:
+            artist.id,
 
-        featured:
-          (
-            album.more_info?.artistMap
-              ?.featured_artists || []
-          ).map(formatArtist),
-      },
+          name:
+            decode(
+              artist.name
+            ),
+
+          role:
+            artist.role || "",
+
+          image:
+            artist.image || "",
+
+          type:
+            artist.type || "artist",
+
+          perma_url:
+            artist.perma_url || "",
+        })),
     },
   };
 }

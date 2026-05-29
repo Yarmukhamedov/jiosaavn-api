@@ -11,11 +11,15 @@ function decryptMediaUrl(
   encryptedUrl
 ) {
   const key =
-    Buffer.from("38346591");
+    Buffer.concat([
+      Buffer.from("38346591"),
+      Buffer.from("38346591"),
+      Buffer.from("38346591"),
+    ]);
 
   const decipher =
     crypto.createDecipheriv(
-      "DES-ECB",
+      "des-ede3",
       key,
       null
     );

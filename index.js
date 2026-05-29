@@ -8,6 +8,7 @@ endpoints: {
   album_search: "/api/albums?q=",
   artist_search: "/api/artists?q=",
   playlist_search: "/api/playlists?q=",
+  song_details: "/api/song?token=",
   album_details: "/api/album?token=",
   artist_details: "/api/artist?token=",
   playlist_details: "/api/playlist?token=",

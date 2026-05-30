@@ -64,6 +64,16 @@ export default async function handler(
       "public, max-age=31536000, immutable"
     );
 
+    res.setHeader(
+      "Cross-Origin-Resource-Policy",
+      "cross-origin"
+    );
+
+    res.setHeader(
+      "Cross-Origin-Embedder-Policy",
+       "credentialless"
+    );
+
     return res.send(buffer);
 
   } catch (err) {

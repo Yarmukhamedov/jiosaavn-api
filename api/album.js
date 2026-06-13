@@ -218,7 +218,7 @@ export default async function handler(
     return res.status(200).json({
 
       id:
-        album.id,
+        data.id,
       
       token:
         albumToken,

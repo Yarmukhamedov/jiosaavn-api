@@ -46,11 +46,11 @@
 <pre>
 <b>Song details:</b> /api/song?token={songToken}
 
-<b>Album details:</b> /api/album?token={albumToken}
+<b>Album details:</b> /api/album?token={albumToken}&page=0
+
+<b>Artist details:</b> /api/artist?token={artistToken}&page=0
 
 <b>Playlist details:</b> /api/playlist?token={playlistToken}
-
-<b>Artist details:</b> /api/artist?token={artistToken}
 </pre>
 
 <h3>Other Endpoints</h3>

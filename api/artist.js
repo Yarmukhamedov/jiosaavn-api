@@ -110,13 +110,13 @@ function formatSong(song) {
     },
 
     artists: {
-      primary_artists:
+      primary:
         (
           song.more_info?.artistMap
             ?.primary_artists || []
         ).map(formatArtist),
 
-      featured_artists:
+      featured:
         (
           song.more_info?.artistMap
             ?.featured_artists || []
@@ -133,52 +133,42 @@ function formatAlbum(album) {
     permaUrl.split("/").pop() || "";
 
   return {
-    id: token,
+  id: album.id,
+    
+  token,
 
-    title:
-      decode(album.title),
+  title: decode(album.title),
 
-    subtitle:
-      decode(album.subtitle),
+  subtitle: decode(album.subtitle),
 
-    type:
-      album.type,
+  type: album.type,
 
-    album_url:
-      permaUrl,
+  perma_url: permaUrl,
 
-    image:
-      album.image || "",
+  image: album.image || "",
 
-    language:
-      album.language,
+  language: album.language,
 
-    year:
-      album.year,
+  year: album.year,
 
-    isExplicit:
-      album.explicit_content === "1",
+  isExplicit:
+    album.explicit_content === "1",
 
-    song_count:
-      album.more_info?.song_count || "0",
+  song_count:
+    album.more_info?.song_count || "0",
 
-    artistMap: {
-      primary_artists:
-        (
-          album.more_info?.artistMap
-            ?.primary_artists || []
-        ).map(formatArtist),
+  artists: {
+    primary:
+      (
+        album.more_info?.artistMap?.primary_artists || []
+      ).map(formatArtist),
 
-      featured_artists:
-        (
-          album.more_info?.artistMap
-            ?.featured_artists || []
-        ).map(formatArtist),
-    },
-
-    description:
-      album.description || "",
-  };
+    featured:
+      (
+        album.more_info?.artistMap?.featured_artists || []
+      ).map(formatArtist),
+  },
+ };
 }
 
 function formatPlaylist(playlist) {

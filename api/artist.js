@@ -334,28 +334,11 @@ export default async function handler(
       })
     ]);
 
-      console.log("Popular:", popularResponse.status);
-      console.log("Latest :", latestResponse.status);
-
     const popularData =
       await popularResponse.json();
 
     const latestData =
       await latestResponse.json();
-
-    console.log("Popular topAlbums:", popularData.topAlbums?.length);
-    console.log("Latest topAlbums :", latestData.topAlbums?.length);
-
-    console.log("Popular singles:", popularData.singles?.length);
-    console.log("Latest singles :", latestData.singles?.length);
-
-    console.log(popularData.topAlbums?.[0]);
-    console.log(latestData.topAlbums?.[0]);
-
-    console.log(
-    "Sending:",
-    (latestData.topAlbums || []).length
-    );
 
     return res.status(200).json({
       id: token,
@@ -378,30 +361,39 @@ export default async function handler(
 
       topAlbums:
         (
-          latestData.topAlbums || []
+         latestData.topAlbums?.length
+         ? latestData.topAlbums
+         : popularData.topAlbums || []
         ).map(formatAlbum),
 
       singles:
         (
-          latestData.singles || []
+         latestData.singles?.length
+         ? latestData.singles
+         : popularData.singles || []
         ).map(formatAlbum),
 
       latest_release:
         (
-          latestData.latest_release || []
+         latestData.latest_release?.length
+         ? latestData.latest_release
+         : popularData.latest_release || []
         ).map(formatAlbum),
 
       dedicated_artist_playlist:
         (
-          popularData.dedicated_artist_playlist || []
+         latestData.dedicated_artist_playlist?.length
+         ? latestData.dedicated_artist_playlist
+         : popularData.dedicated_artist_playlist || []
         ).map(formatPlaylist),
 
       featured_artist_playlist:
         (
-          popularData.featured_artist_playlist || []
+         latestData.featured_artist_playlist?.length
+         ? latestData.featured_artist_playlist
+         : popularData.featured_artist_playlist || []
         ).map(formatPlaylist),
     });
-
   } catch (err) {
     return res.status(500).json({
       status: false,

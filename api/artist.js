@@ -267,7 +267,7 @@ export default async function handler(
     `&category=` +
     `&sort_order=` +
     `&includeMetaTags=0` +
-    `&ctx=wap6dot0` +
+    `&ctx=web6dot0` +
     `&api_version=4` +
     `&_format=json` +
     `&_marker=0`;
@@ -284,7 +284,7 @@ export default async function handler(
     `&category=latest` +
     `&sort_order=desc` +
     `&includeMetaTags=0` +
-    `&ctx=wap6dot0` +
+    `&ctx=web6dot0` +
     `&api_version=4` +
     `&_format=json` +
     `&_marker=0`;

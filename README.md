@@ -1,9 +1,13 @@
-<h1 align="center">JioSaavn API</h1>
+<h1 align="center">JioSaavn API (Yarmukhamedov Customized Version)</h1>
 
 <p align="center">
   Reverse-engineered backend for JioSaavn.<br>
   Unofficial API. No permission. Just vibes 😎
 </p>
+
+<blockquote>
+  <strong>Note:</strong> Ushbu loyiha original <a href="https://github.com/ODSkyler/jiosaavn-api">ODSkyler/jiosaavn-api</a> loyihasining shaxsiy ehtiyojlar uchun moslashtirilgan variantidir. (This is a customized version of the original repository).
+</blockquote>
 
 <hr>
 
